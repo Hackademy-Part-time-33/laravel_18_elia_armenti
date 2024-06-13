@@ -29,11 +29,15 @@ class Create extends Component
 
         session()->flash('status', 'Prodotto creato con successo');
 
+        $this->resetProduct();
+ 
+        return $this->redirect('/products');
+    }
+
+    public function resetProduct(){
         $this->title = '';
         $this->subtitle = '';
         $this->body = '';
- 
-        return $this->redirect('/products');
     }
 
     public function render()
