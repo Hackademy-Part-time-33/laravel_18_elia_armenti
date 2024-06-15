@@ -18,12 +18,16 @@ class Edit extends Component
     #[Validate('required|min:15')] 
     public $body;
 
-    public function mount() {
 
-        $this->title = $this->product->title;
-        $this->subtitle = $this->product->subtitle;
-        $this->body = $this->product->body;
+    public $product;
+    
 
+    public function mount(Product $product)
+    {
+        
+        $this->title = $product->title;
+        $this->subtitle = $product->subtitle;
+        $this->body = $product->body;
     }
 
     public function update(){
@@ -37,6 +41,8 @@ class Edit extends Component
         ]);
 
         session()->flash('status', 'Prodotto modificato con successo');
+
+        /* return redirect()->route('livewire.products.create'); */
 
     }
 

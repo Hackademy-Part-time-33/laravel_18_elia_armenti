@@ -9,7 +9,7 @@
     <div class="row gx-5 justify-content-center ">
         <div class="col-lg-8 col-xl-6 border p-5 rounded">
             
-            <form wire:submit="store">
+            <form wire:submit="update">
                 <div class="mb-3">
                     <label for="name">Titolo</label>
                     <input class="form-control" wire:model.blur.debounce.1000ms="update" type="text">
